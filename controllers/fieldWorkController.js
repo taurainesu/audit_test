@@ -3,6 +3,10 @@ var assert = require('assert');
 var bodyParser = require('body-parser');
 
 
+//for connecting to hosted database use the url below
+//var url = 'mongodb+srv://audit_user:AnwUpqUPsAZH5sHk@auditdb-ns96y.mongodb.net/test?retryWrites=true&w=majority';
+
+//for connecting to local database use the url below
 var url = 'mongodb://localhost:27017/audit_DB';
 
 module.exports=function(app){
@@ -13,6 +17,11 @@ module.exports=function(app){
     
 
     //routes
+
+    app.get('/field-work/tb-ledger-upload/:user', function(req, res){
+        connectToDBDisplayEngagementCard(res, req, 'tb-ledger-upload');
+    });
+
     app.get('/field-work/investment-property/:user', function(req, res){
         connectToDBDisplayEngagementCard(res, req, 'investment-property');        
     });

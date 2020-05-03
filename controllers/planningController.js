@@ -3,6 +3,10 @@ var assert = require('assert');
 var bodyParser = require('body-parser');
 
 
+//for connecting to hosted database use the url below
+//var url = 'mongodb+srv://audit_user:AnwUpqUPsAZH5sHk@auditdb-ns96y.mongodb.net/test?retryWrites=true&w=majority';
+
+//for connecting to local database use the url below
 var url = 'mongodb://localhost:27017/audit_DB';
 
 module.exports=function(app){
@@ -78,7 +82,7 @@ function connectToDBDisplayEngagementCard(res, req, page) {
     mongo.connect(url, function (err, client) {
         assert.equal(null, err); //assert to check if there is an error
         var db = client.db('audit_DB');
-        var cursor = db.collection('test-pre-engagement').find();
+        var cursor = db.collection('test-pre-engagement').find({aboveThreshold:true});
         cursor.forEach(function (doc, err) {
             assert.equal(null, err);
             companyArray.push(doc.company);

@@ -120,3 +120,7 @@
   .user-text-red {
     color: #FF0000;
   }
+
+  .file-picker {
+    padding-bottom: 2.25rem;
+  }

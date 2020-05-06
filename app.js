@@ -1,6 +1,8 @@
 //Express
 var express = require('express')
 var app = express()
+
+var listenPort = process.env.PORT || 8085
 var fs = require('fs')
 var preEngagementController = require('./controllers/preEngagementController')
 var planningController = require('./controllers/planningController')
@@ -21,8 +23,8 @@ app.use(morgan('combined'))
 app.set('view engine', 'ejs')
 
 //setup port
-app.listen(8085, ()=>{
-    console.log('App is running on port 8085')
+app.listen(listenPort, ()=>{
+    console.log('App is running on port '+listenPort)
 })
 
 //fire controllers

@@ -23,6 +23,60 @@ module.exports = function(app){
     });
 
     app.post('/pre-engagement/client-acceptance/:user', function(req, res){
+
+        //create score counter and calculate overall score
+        var scoreCount=0;
+        var aboveThreshold=false;
+        var auditAuthorised=false;
+
+        function calcThreshold(){
+            if(req.body.yesNoNAA=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAB=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAC=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAD=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAE=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAF=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAG=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAH=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAI=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAJ=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAK=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAL=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAM=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAN=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAO=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAP=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAQ=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAR=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAS=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAT=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAU=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAV=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAW=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAX=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAY=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAZ=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAAA=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAAB=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAAC=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAAD=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAAE=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAAF=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAAG=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAAH=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAAI=='Yes'){scoreCount+=1}
+            if(req.body.yesNoNAAJ=='Yes'){scoreCount+=1}
+
+            if(scoreCount>=32){
+                aboveThreshold=true;
+                auditAuthorised =true;
+            }else{
+                aboveThreshold=false;
+            }
+        }
+
+        calcThreshold();
+
         //create model for data to be sent to database
         var item = {
             company:req.body.company,
@@ -64,6 +118,9 @@ module.exports = function(app){
             significantBranches:req.body.yesNoNAAH,
             deadlineCoincideWithPressures:req.body.yesNoNAAI,
             independenceThreats:req.body.yesNoNAAJ,
+            scoreCount,
+            aboveThreshold,
+            auditAuthorised
         };
         //connect to db
         mongo.connect(url, function(err, client){
@@ -79,6 +136,7 @@ module.exports = function(app){
 
         //redirect to index route
         res.redirect('/main/:user');
+        console.log('Client Acceptance record created for client: '+req.body.company);
         //res.render('client-acceptance', {user:req.params.user});
     });
 
@@ -91,6 +149,7 @@ module.exports = function(app){
         //create score counter and calculate overall score
         var scoreCount=0;
         var aboveThreshold=false;
+        var auditAuthorised=false;
 
         function calcThreshold(){
             if(req.body.yesNoNAA=='Yes'){scoreCount+=1}
@@ -114,6 +173,7 @@ module.exports = function(app){
 
             if(scoreCount>=14){
                 aboveThreshold=true;
+                auditAuthorised =true;
             }else{
                 aboveThreshold=false;
             }
@@ -146,7 +206,8 @@ module.exports = function(app){
             significantBranches:req.body.yesNoNAQ,
             consideredPartnerRootation:req.body.yesNoNAR,
             scoreCount,
-            aboveThreshold
+            aboveThreshold,
+            auditAuthorised
         };
 
         //connect to db
@@ -163,6 +224,7 @@ module.exports = function(app){
 
         //redirect to index route
         res.redirect('/main/:user');
+        console.log('Continuance Evaluation record created for client: '+req.body.company);
         //res.render('client-acceptance', {user:req.params.user});
     });
 

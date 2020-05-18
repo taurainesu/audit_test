@@ -74,7 +74,7 @@
                     </label>                
                                      
                     <label class="small font-weight-bold" for="date">Date
-                        <input class="form-control form-control-sm" type="text" id="date" name="date">
+                        <input class="form-control form-control-sm" type="date" id="today" name="today" readonly>
                     </label>
                     
                 </div>
@@ -1182,7 +1182,7 @@
                 </div>
               </div>
 
-              <button class="btn btn-info btn-long" type="submit">Submit</button>
+              <button class="btn btn-info btn-long" type="submit" data-toggle="modal" data-target="#confirmModal" >Submit</button>
               <button class="btn btn-secondary btn-long" type="reset">Reset All Fields</button>
 
             </div>
@@ -1222,7 +1222,7 @@
           <p>Client successfully created!</p>
         </div>
         <div class="modal-footer">
-          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+          <button class="btn btn-default" type="button" data-dismiss="modal" onclick="window.location.href='/pre-engagement/client-acceptance/:user'">Close</button>
         </div>
       </div>
     </div>
@@ -1263,6 +1263,16 @@
   <!-- Page level custom scripts -->
   <script src="/js/demo/chart-area-demo.js"></script>
   <script src="/js/demo/chart-pie-demo.js"></script>
+
+  <!--Script to get today's date-->
+  <script>
+    var field = document.querySelector('#today');
+    var date = new Date();
+
+    // Set the date
+    field.value = date.getFullYear().toString() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) + '-' + date.getDate().toString().padStart(2, 0);
+  </script>
+
 
 </body>
 

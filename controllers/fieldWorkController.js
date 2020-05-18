@@ -4,10 +4,10 @@ var bodyParser = require('body-parser');
 
 
 //for connecting to hosted database use the url below
-var url = 'mongodb+srv://audit_user:AnwUpqUPsAZH5sHk@auditdb-ns96y.mongodb.net/test?retryWrites=true&w=majority';
+//var url = 'mongodb+srv://audit_user:AnwUpqUPsAZH5sHk@auditdb-ns96y.mongodb.net/test?retryWrites=true&w=majority';
 
 //for connecting to local database use the url below
-//var url = 'mongodb://localhost:27017/audit_DB';
+var url = 'mongodb://localhost:27017/audit_DB';
 
 module.exports=function(app){
 

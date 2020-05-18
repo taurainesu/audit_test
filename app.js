@@ -2,6 +2,8 @@
 var express = require('express')
 var app = express()
 
+
+//set listen port which listens on local port 8085 or process.env.PORT if the app is hosted on heroku
 var listenPort = process.env.PORT || 8085
 var fs = require('fs')
 var preEngagementController = require('./controllers/preEngagementController')

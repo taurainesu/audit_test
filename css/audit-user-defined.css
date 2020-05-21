@@ -124,3 +124,13 @@
   .file-picker {
     padding-bottom: 2.25rem;
   }
+
+  .table-header-row {
+    text-align: center;
+    border-top: 5px solid #dee2e6;
+    border-bottom: 8px solid #dee2e6;
+  }
+
+  .uneditable-cell {
+    background-color: #dee2e6;
+  }

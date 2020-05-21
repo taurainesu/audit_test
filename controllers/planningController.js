@@ -73,7 +73,15 @@ module.exports=function(app){
 
     app.get('/planning/client-service-plan/:user', function(req, res){
         connectToDBDisplayEngagementCard(res, req, 'client-service-plan');
-    });    
+    });
+
+    app.get('/planning/going-concern/:user', function(req, res){
+        connectToDBDisplayEngagementCard(res, req, 'going-concern');
+    });
+    
+    app.get('/planning/opening-balances-verification/:user', function(req, res){
+        connectToDBDisplayEngagementCard(res, req, 'opening-balances-verification');
+    });
 }
 
 function connectToDBDisplayEngagementCard(res, req, page) {

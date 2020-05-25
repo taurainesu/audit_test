@@ -82,6 +82,18 @@ module.exports=function(app){
     app.get('/planning/opening-balances-verification/:user', function(req, res){
         connectToDBDisplayEngagementCard(res, req, 'opening-balances-verification');
     });
+
+    app.get('/planning/planning-minutes/:user', function(req, res){
+        connectToDBDisplayEngagementCard(res, req, 'planning-minutes');
+    });
+
+    app.get('/planning/discussion-among-audit-team/:user', function(req, res){
+        connectToDBDisplayEngagementCard(res, req, 'discussion-among-audit-team');
+    });
+
+    app.get('/planning/discussion-with-those-charged-with-governance-1d/:user', function(req, res){
+        connectToDBDisplayEngagementCard(res, req, 'discussion-with-those-charged-with-governance-1d');
+    });
 }
 
 function connectToDBDisplayEngagementCard(res, req, page) {

@@ -94,6 +94,18 @@ module.exports=function(app){
     app.get('/planning/discussion-with-those-charged-with-governance-1d/:user', function(req, res){
         connectToDBDisplayEngagementCard(res, req, 'discussion-with-those-charged-with-governance-1d');
     });
+
+    app.get('/planning/discussion-with-those-charged-with-governance-1c/:user', function(req,res){
+        connectToDBDisplayEngagementCard(res, req, 'discussion-with-those-charged-with-governance-1c');
+    });
+
+    app.get('/planning/discussion-with-those-charged-with-governance-1b/:user', function(req,res){
+        connectToDBDisplayEngagementCard(res, req, 'discussion-with-those-charged-with-governance-1b');
+    });
+
+    app.get('/planning/discussion-with-those-charged-with-governance-1a/:user', function(req,res){
+        connectToDBDisplayEngagementCard(res, req, 'discussion-with-those-charged-with-governance-1a');
+    });
 }
 
 function connectToDBDisplayEngagementCard(res, req, page) {

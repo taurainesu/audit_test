@@ -106,6 +106,14 @@ module.exports=function(app){
     app.get('/planning/discussion-with-those-charged-with-governance-1a/:user', function(req,res){
         connectToDBDisplayEngagementCard(res, req, 'discussion-with-those-charged-with-governance-1a');
     });
+
+    app.get('/planning/preAudit-meeting-with-those-charged-with-governance/:user', function(req,res){
+        connectToDBDisplayEngagementCard(res, req, 'preAudit-meeting-with-those-charged-with-governance');
+    });
+
+    app.get('/planning/threats-declaration/:user', function(req,res){
+        connectToDBDisplayEngagementCard(res, req, 'threats-declaration');
+    });
 }
 
 function connectToDBDisplayEngagementCard(res, req, page) {

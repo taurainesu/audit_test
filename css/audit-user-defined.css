@@ -134,3 +134,21 @@
   .uneditable-cell {
     background-color: #dee2e6;
   }
+
+
+  #headerRow:hover{
+    background-color: rgb(233, 231, 231);
+  }
+
+  #headerRow{
+      background-color:  rgb(248, 249, 250);
+  }
+
+  #headerTable{    
+    border-top: 5px solid #dee2e6;
+    border-bottom: 8px solid #dee2e6;
+  }
+
+  tr.clickable-row { 
+    cursor: pointer; 
+  }

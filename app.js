@@ -12,6 +12,7 @@ var dashboardController = require('./controllers/dashboardController')
 var mainController = require('./controllers/mainController')
 var loginController=require('./controllers/loginController')
 var fieldWorkController=require('./controllers/fieldWorkController')
+var viewWorkPapersController = require('./controllers/viewWorkPapersController')
 
 //middleware to access static files. Will check all folders for static files
 
@@ -36,4 +37,5 @@ dashboardController(app);
 mainController(app);
 loginController(app);
 fieldWorkController(app);
+viewWorkPapersController(app);
 

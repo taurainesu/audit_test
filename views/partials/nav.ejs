@@ -2,15 +2,20 @@
   
   <br>
     <!-- Sidebar - Brand -->
+    <!--
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
       <div class="sidebar-brand-icon">
         <img class="img-profile rounded-pill" src="/img/audit-icon-edited2.jpg">        
       </div>
     </a>
     <br>
+    -->
 
     <!-- Divider -->
+    <!--
     <hr class="sidebar-divider my-0">
+    -->
+    
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
@@ -26,10 +31,35 @@
 
         <!-- Heading -->
         <div class="sidebar-heading">
+          Quick View
+        </div>
+    
+        <!-- Work Papers - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#workPapersCollapse" aria-expanded="true" aria-controls="collapsePages">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Work Papers</span>
+          </a>
+          <div id="workPapersCollapse" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Work Papers List:</h6>
+              <a class="collapse-item" href="/work-papers/work-papers-by-client/:user">Work Papers By Client</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
           Core Modules
         </div>
     
-        <!-- Nav Item - Pages Collapse Menu -->
+        <!-- Pre-Engagement - Pages Collapse Menu -->
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#preEngagementCollapse" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
@@ -68,6 +98,8 @@
                 <a class="collapse-item" href="/planning/preAudit-meeting-with-those-charged-with-governance/:user">10.08A2 - Pre Audit<br>Meeting With Those<br>Charged With Governance</a>
                 <a class="collapse-item" href="/planning/assessment-of-staff-for-engagement/:user">10.09 Assessment Of Staff<br>For Engagement</a>
                 <a class="collapse-item" href="/planning/threats-declaration/:user">10.10 Threats Declaration</a>
+                <a class="collapse-item" href="/planning/partner-independence-declaration/:user">10.11 Partner<br>Independence Declaration</a>
+                <a class="collapse-item" href="/planning/work-and-time-allocation/:user">10.12 Work and<br>Time Allocation</a>
                 <a class="collapse-item" href="/planning/risk-assessment-a/:user">10.45A - Risks at FSL</a>
                 <a class="collapse-item" href="/planning/risk-assessment-b/:user">10.45B - Risks at AL SFP</a>
                 <a class="collapse-item" href="/planning/risk-assessment-c/:user">10.45C - Risks at AL SCI</a>

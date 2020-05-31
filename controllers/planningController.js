@@ -114,6 +114,14 @@ module.exports=function(app){
     app.get('/planning/threats-declaration/:user', function(req,res){
         connectToDBDisplayEngagementCard(res, req, 'threats-declaration');
     });
+
+    app.get('/planning/partner-independence-declaration/:user', function(req,res){
+        connectToDBDisplayEngagementCard(res, req, 'partner-independence-declaration');
+    });
+
+    app.get('/planning/work-and-time-allocation/:user', function(req,res){
+        connectToDBDisplayEngagementCard(res, req, 'work-and-time-allocation');
+    });
 }
 
 function connectToDBDisplayEngagementCard(res, req, page) {

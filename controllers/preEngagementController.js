@@ -85,41 +85,77 @@ module.exports = function(app){
             date:req.body.today,
             wpRef:'10.14A',
             commWithPrevAuditors:req.body.yesNoNAA,
+            communicateCommentsA:req.body.communicateCommentsA,
             ascertainIfAdvisedAccountant:req.body.yesNoNAB,
+            ascertainCommentsB:req.body.ascertainCommentsB,
             didWeRequestPerm:req.body.yesNoNAC,
+            satisfiedCommentsC:req.body.satisfiedCommentsC,
             didWeDecline:req.body.yesNoNAD,
+            permissionCommentsD:req.body.permissionCommentsD,
             didWeAsk:req.body.yesNoNAE,
+            accountantCommentsE:req.body.accountantCommentsE,
             didWeAttemptToCommWithExistingAcc:req.body.yesNoNAF,
+            replyCommentsF:req.body.replyCommentsF,
             discWithThirdParties:req.body.yesNoNAG,
+            discussionsCommentsG:req.body.discussionsCommentsG,
             inquiriesOfOtherFirmPersonnel:req.body.yesNoNAH,
+            inquiriesCommentsH:req.body.inquiriesCommentsH,
             inquiriesOfThirdParties:req.body.yesNoNAI,
+            thirdCommentsI:req.body.thirdCommentsI,
             performBackgroundSearches:req.body.yesNoNAJ,
+            backgroundCommentsJ:req.body.backgroundCommentsJ,
             honestRelationship:req.body.yesNoNAK,
+            honestCommentsK:req.body.honestCommentsK,
             highRiskClient:req.body.yesNoNAL,
+            managedCommentsL:req.body.managedCommentsL,
             changesInManagement:req.body.yesNoNAM,
+            changesCommentsM:req.body.changesCommentsM,
             solvencyLevels:req.body.yesNoNAN,
+            solvencyCommentsN:req.body.solvencyCommentsN,
             dominantIndividual:req.body.yesNoNAO,
+            dominantCommentsO:req.body.dominantCommentsO,
             historyOfLawsuits:req.body.yesNoNAP,
+            lawsuitsCommentsP:req.body.lawsuitsCommentsP,
             otherOffices:req.body.yesNoNAQ,
+            otherEngagementsCommentsQ:req.body.otherEngagementsCommentsQ,
             identityKnown:req.body.yesNoNAR,
+            identityCommentsR:req.body.identityCommentsR,
             businessReputation:req.body.yesNoNAS,
+            reputationCommentsS:req.body.reputationCommentsS,
             familiarWithOps:req.body.yesNoNAT,
+            familiarCommentsT:req.body.familiarCommentsT,
             informationConcerningAttitude:req.body.yesNoNAU,
+            attitudeCommentsU:req.body.attitudeCommentsU,
             concernedWithMaintainingFees:req.body.yesNoNAV,
+            aggresivelyCommentsV:req.body.aggresivelyCommentsV,
             inappropriateLimitation:req.body.yesNoNAW,
+            limitationCommentsW:req.body.limitationCommentsW,
             involvedInMoneyLaundering:req.body.yesNoNAX,
+            launderingCommentsX:req.body.launderingCommentsX,
             activitiesOfNOCLAR:req.body.yesNoNAY,
+            noclarCommentsY:req.body.noclarCommentsY,
             reasonsForAppointment:req.body.yesNoNAZ,
+            appointmentCommentsZ:req.body.appointmentCommentsZ,
             knowledgeOfIndustry:req.body.yesNoNAAA,
+            industryCommentsAA:req.body.industryCommentsAA,
             experienceWithRequirements:req.body.yesNoNAAB,
+            experienceCommentsAB:req.body.experienceCommentsAB,
             sufficientPersonnel:req.body.yesNoNAAC,
+            personnelCommentsAC:req.body.personnelCommentsAC,
             expertsAvailable:req.body.yesNoNAAD,
+            expertsCommentsAD:req.body.expertsCommentsAD,
             eqcrAvailable:req.body.yesNoNAAE,
+            eqcrCommentsAE:req.body.eqcrCommentsAE,
             ableToComplete:req.body.yesNoNAAF,
+            deadlineCommentsAF:req.body.deadlineCommentsAF,
             specialisedIndustryFactors:req.body.yesNoNAAG,
+            factorsCommentsAG:req.body.factorsCommentsAG,
             significantBranches:req.body.yesNoNAAH,
+            branchesCommentsAH:req.body.branchesCommentsAH,
             deadlineCoincideWithPressures:req.body.yesNoNAAI,
+            pressuresCommentsAI:req.body.pressuresCommentsAI,
             independenceThreats:req.body.yesNoNAAJ,
+            independenceCommentsAJ:req.body.independenceCommentsAJ,
             scoreCount,
             aboveThreshold,
             auditAuthorised
@@ -191,23 +227,41 @@ module.exports = function(app){
             date:req.body.today,
             wpRef:'10.14B',
             honestRelationship:req.body.yesNoNAA,
+            communicateCommentsA:req.body.communicateCommentsA,
             canHighRiskClientBeManaged:req.body.yesNoNAB,
+            ascertainCommentsB:req.body.ascertainCommentsB,
             changesInManagement:req.body.yesNoNAC,
+            satisfiedCommentsC:req.body.satisfiedCommentsC,
             clientSolvency:req.body.yesNoNAD,
+            permissionCommentsD:req.body.permissionCommentsD,
             historyOfLawsuits:req.body.yesNoNAE,
+            accountantCommentsE:req.body.accountantCommentsE,
             identityOfPrincipal:req.body.yesNoNAF,
+            replyCommentsF:req.body.replyCommentsF,
             businessReputationofPrincipal:req.body.yesNoNAG,
+            discussionsCommentsG:req.body.discussionsCommentsG,
             informationConcerningAttitude:req.body.yesNoNAH,
+            inquiriesCommentsH:req.body.inquiriesCommentsH,
             clientAggressivelyConcerned:req.body.yesNoNAI,
+            thirdCommentsI:req.body.thirdCommentsI,
             indicationOfInappropriateLimitation:req.body.yesNoNAJ,
+            backgroundCommentsJ:req.body.backgroundCommentsJ,
             sufficientKnowledgeOfIndustry:req.body.yesNoNAK,
+            honestCommentsK:req.body.honestCommentsK,
             experienceWithRegulatory:req.body.yesNoNAL,
+            managedCommentsL:req.body.managedCommentsL,
             sufficientPersonnel:req.body.yesNoNAM,
+            changesCommentsM:req.body.changesCommentsM,
             expertsAvailable:req.body.yesNoNAN,
+            solvencyCommentsN:req.body.solvencyCommentsN,
             eqcrAvailable:req.body.yesNoNAO,
+            dominantCommentsO:req.body.dominantCommentsO,
             specialisedIndustryFactors:req.body.yesNoNAP,
+            lawsuitsCommentsP:req.body.lawsuitsCommentsP,
             significantBranches:req.body.yesNoNAQ,
+            otherEngagementsCommentsQ:req.body.otherEngagementsCommentsQ,
             consideredPartnerRootation:req.body.yesNoNAR,
+            identityCommentsR:req.body.identityCommentsR,
             scoreCount,
             aboveThreshold,
             auditAuthorised
@@ -232,7 +286,27 @@ module.exports = function(app){
     });
 
     app.get('/pre-engagement/finalize-pre-engagement/:user', function(req, res){
-        res.render('finalize-pre-engagement', {user:req.params.user});
+        connectToDBDisplayFailedClients(res, req, 'finalize-pre-engagement');
     });
     
 };
+
+function connectToDBDisplayFailedClients(res, req, page) {
+    var companyArray = [];
+    var yearEndArray = [];
+    mongo.connect(url, function (err, client) {
+        assert.equal(null, err); //assert to check if there is an error
+        var db = client.db('audit_DB');
+        var cursor = db.collection('test-pre-engagement').find({auditAuthorised:false});
+        cursor.forEach(function (doc, err) {
+            assert.equal(null, err);
+            companyArray.push(doc.company);
+            yearEndArray.push(doc.engagementYearEnd);
+        }, function () {
+            client.close();
+            res.render(page, { items: companyArray, itemsYear: yearEndArray, user: req.params.user }); //this is the last line of code. continue from here                
+            console.log(companyArray);
+            console.log(yearEndArray);
+        });
+    });
+}

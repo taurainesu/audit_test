@@ -288,12 +288,17 @@ module.exports = function(app){
     app.get('/pre-engagement/finalize-pre-engagement/:user', function(req, res){
         connectToDBDisplayFailedClients(res, req, 'finalize-pre-engagement');
     });
+
+    app.get('/pre-engagement/edit-failed-pre-engagement/:user', function(req, res){
+        connectToDBDisplayFailedClients(res, req, 'edit-failed-pre-engagement');
+    });
     
 };
 
 function connectToDBDisplayFailedClients(res, req, page) {
     var companyArray = [];
     var yearEndArray = [];
+    var wpRefArray = [];
     mongo.connect(url, function (err, client) {
         assert.equal(null, err); //assert to check if there is an error
         var db = client.db('audit_DB');
@@ -302,9 +307,10 @@ function connectToDBDisplayFailedClients(res, req, page) {
             assert.equal(null, err);
             companyArray.push(doc.company);
             yearEndArray.push(doc.engagementYearEnd);
+            wpRefArray.push(doc.wpRef);
         }, function () {
             client.close();
-            res.render(page, { items: companyArray, itemsYear: yearEndArray, user: req.params.user }); //this is the last line of code. continue from here                
+            res.render(page, { items: companyArray, itemsYear: yearEndArray, itemsWpRef:wpRefArray, user: req.params.user }); //this is the last line of code. continue from here                
             console.log(companyArray);
             console.log(yearEndArray);
         });

@@ -40,14 +40,17 @@
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h3 class="h4 text-gray-900 mb-4">Audit System</h3>
+                    <h1 class="h4 text-gray-900 mb-4">Login</h1>
                   </div>
+                  <% if (message.error) { %>
+                    <div class="alert alert-danger"><%= message.error %></div>
+                  <% }%>
                   <form class="user" action="/login" method="POST">
                     <div class="form-group">
-                      <input type="username" class="form-control form-control-user" name="uname" id="uname" aria-describedby="emailHelp" placeholder="Enter Username...">
+                      <input type="username" class="form-control form-control-user" name="username" id="uname" aria-describedby="emailHelp" placeholder="Enter Username...">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" name="upass" id="upass" placeholder="Password">
+                      <input type="password" class="form-control form-control-user" name="password" id="upass" placeholder="Password">
                     </div>
                     <button class="btn btn-primary btn-user btn-block" id="loginForm" type="submit">
                       Login
@@ -60,10 +63,6 @@
                   <hr>
                   <div class="text-center">
                     <a class="small" href="forgot-password.html">Forgot Password?</a>
-                  </div>
-                  <br>
-                  <div class="text-center">
-                    <h5 class="h5 text-gray-900 mb-4">Powered by Tusson Solutions</h4>
                   </div>
                 </div>
               </div>
